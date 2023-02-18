@@ -82,8 +82,7 @@ select id_piezas from exposicion where id_pintor = 'NA003'
 select nombre_piezas [De Vangho]from Piezas where id_piezas in ('PA003','PA005', 'PA008')
 
 --6
-
-select MAX(precio) as [Obra mas cara] from exposicion
+select nombre_piezas as [Mayor valor] from Piezas where id_piezas = (select id_piezas from Exposicion where precio = (select MAX(precio) as [Obra mas cara] from exposicion))
 
 --7
 
